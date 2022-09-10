@@ -1,0 +1,382 @@
+WindowManager:
+    Welcome:
+    MainPage:
+    B1:
+    B11:
+    B12:
+    B13:
+    B2:
+    B21:
+    B22:
+    B23:
+
+
+<Welcome>:
+    name: "Welcome"
+    GridLayout:
+
+        cols: 1
+        Label:
+            text: "WELCOME TO MY APP"
+            color: 0.89019, 0.109803, 0.474509
+        GridLayout:
+            cols: 3
+            Label:
+            Button:
+                text: "Start"
+                on_release:
+                    app.root.current = "MainPage"
+                    root.manager.transition.direction = "left"
+
+
+            Label:
+<MainPage>:
+    name: "MainPage"
+    GridLayout:
+
+        cols: 1
+        size: root.width, root.height
+        Label:
+            text: "HEY HERE TWO GAMES ARE PRESENT SELECT ANYONE"
+            color: 0.89019, 0.109803, 0.474509
+        GridLayout:
+            cols: 2
+
+            Button:
+                text: "ROCK PAPER SCISSOR"
+                size_hint: 1, .5
+                on_press:
+                    root.manager.current = "B1"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "GUESS THE NO"
+                size_hint: 1, .5
+
+                on_press:
+                    root.manager.current = "B2"
+                    root.manager.transition.direction = "left"
+        Button:
+            text: "EXIT"
+            on_press:
+                app.root.current = "Welcome"
+                root.manager.transition.direction = "right"
+
+
+
+<B1>:
+    name: "B1"
+    GridLayout:
+        cols: 1
+        Label:
+            text: "WELCOME TO ROCK PAPER AND SCISSOR GAME"
+
+        Button:
+            text: "10 CHANCE"
+            on_press:
+                root.manager.current = "B11"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "15 CHANCE"
+            on_press:
+                root.manager.current = "B12"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "25 CHANCE"
+            on_press:
+                root.manager.current = "B13"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "EXIT"
+            on_press:
+                root.manager.current = "MainPage"
+                root.manager.transition.direction = "right"
+
+<B11>:
+    name: "B11"
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+        GridLayout:
+            cols: 3
+            Button:
+                text: "Exit"
+                on_press:
+                    root.manager.current = "B1"
+                    root.manager.transition.direction = "right"
+            GridLayout:
+                cols: 1
+                Label:
+                    text: root.chance_show
+                Label:
+                    text: root.you_win_show
+                Label:
+                    text: root.computer_win_show
+            Button:
+                text: "RESTART"
+                on_press: root.restart(self)
+
+
+        GridLayout:
+            cols: 3
+            Button:
+                text: "ROCK"
+                on_press:
+                    root.btn1(self)
+                    root.on_value(self)
+
+            Button:
+                text: "PAPER"
+                on_press:
+                    root.btn2(self)
+                    root.on_value(self)
+            Button:
+                text: "SCISSOR"
+                on_press:
+                    root.btn3(self)
+                    root.on_value(self)
+
+
+        Label:
+            text: root.text_show_str
+<B12>:
+    name: "B12"
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+        GridLayout:
+            cols: 3
+            Button:
+                text: "Exit"
+                on_press:
+                    root.manager.current = "B1"
+                    root.manager.transition.direction = "right"
+            GridLayout:
+                cols: 1
+                Label:
+                    text: root.chance_show
+                Label:
+                    text: root.you_win_show
+                Label:
+                    text: root.computer_win_show
+            Button:
+                text: "restart"
+                on_press: root.restart(self)
+
+
+        GridLayout:
+            cols: 3
+            Button:
+                text: "ROCK"
+                on_press:
+                    root.btn1(self)
+                    root.on_value(self)
+
+            Button:
+                text: "PAPER"
+                on_press:
+                    root.btn2(self)
+                    root.on_value(self)
+            Button:
+                text: "SCISSOR"
+                on_press:
+                    root.btn3(self)
+                    root.on_value(self)
+
+
+        Label:
+            text: root.text_show_str
+<B13>:
+    name: "B13"
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+        GridLayout:
+            cols: 3
+            Button:
+                text: "Exit"
+                on_press:
+                    root.manager.current = "B1"
+                    root.manager.transition.direction = "right"
+            GridLayout:
+                cols: 1
+                Label:
+                    text: root.chance_show
+                Label:
+                    text: root.you_win_show
+                Label:
+                    text: root.computer_win_show
+            Button:
+                text: "restart"
+                on_press: root.restart(self)
+
+
+        GridLayout:
+            cols: 3
+            Button:
+                text: "ROCK"
+                on_press:
+                    root.btn1(self)
+                    root.on_value(self)
+
+            Button:
+                text: "PAPER"
+                on_press:
+                    root.btn2(self)
+                    root.on_value(self)
+            Button:
+                text: "SCISSOR"
+                on_press:
+                    root.btn3(self)
+                    root.on_value(self)
+
+
+        Label:
+            text: root.text_show_str
+
+<B2>:
+    name: "B2"
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Welcome to gussing Game"
+
+        Button:
+            text: "EASY"
+            on_press:
+                root.manager.current = "B21"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "MEDIUM"
+            on_press:
+                root.manager.current = "B22"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "HARD"
+            on_press:
+                root.manager.current = "B23"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Exit"
+            on_press:
+                root.manager.current = "MainPage"
+                root.manager.transition.direction = "right"
+
+
+
+<B21>
+    name: "B21"
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+        GridLayout:
+            cols: 3
+            Button:
+                text: "Exit"
+                on_press:
+                    root.manager.current = "B2"
+                    root.manager.transition.direction = "right"
+            GridLayout:
+                cols: 1
+                Label:
+                    text: root.score
+                Label:
+                    text: root.life
+            Button:
+                text: "restart"
+                on_press: root.restart(self)
+
+
+        GridLayout:
+            cols: 3
+            Label:
+
+            TextInput:
+                id: my_text_input
+                multiline: False
+                on_text_validate: root.on_text_validate(self)
+            Label:
+
+        Label:
+            text: root.text_output_str
+
+
+
+<B22>
+    name: "B22"
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+        GridLayout:
+            cols: 3
+            Button:
+                text: "Exit"
+                on_press:
+                    root.manager.current = "B2"
+                    root.manager.transition.direction = "right"
+            GridLayout:
+                cols: 1
+                Label:
+                    text: root.score
+                Label:
+                    text: root.life
+            Button:
+                text: "restart"
+                on_press: root.restart(self)
+
+
+        GridLayout:
+            cols: 3
+            Label:
+
+            TextInput:
+                id: my_text_input
+                multiline: False
+                on_text_validate: root.on_text_validate(self)
+            Label:
+
+        Label:
+            text: root.text_output_str
+
+
+
+<B23>
+    name: "B23"
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+        GridLayout:
+            cols: 3
+            Button:
+                text: "Exit"
+                on_press:
+                    root.manager.current = "B2"
+                    root.manager.transition.direction = "right"
+            GridLayout:
+                cols: 1
+                Label:
+                    text: root.score
+                Label:
+                    text: root.life
+            Button:
+                text: "restart"
+                on_press: root.restart(self)
+
+
+        GridLayout:
+            cols: 3
+            Label:
+
+            TextInput:
+                id: my_text_input
+                multiline: False
+                on_text_validate: root.on_text_validate(self)
+            Label:
+
+        Label:
+            text: root.text_output_str
+
+
+
